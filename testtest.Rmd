@@ -32,3 +32,6 @@ hist(data$lifeExp, breaks=50)
 
 
 why did the git stuff suddenly go away???
+
+
+will this make things appear?
