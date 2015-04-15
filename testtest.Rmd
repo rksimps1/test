@@ -29,3 +29,6 @@ max
 hist(data$lifeExp)
 hist(data$lifeExp, breaks=50)
 ```
+
+
+why did the git stuff suddenly go away???
