@@ -1,13 +1,16 @@
+---
+output: html_document
+---
 THIS WORKS!!! OMG
 
 Setting working directory and loading data
-```{r}
+```{r, echo = F}
 setwd("/Users/ricksimpson/Documents/Spring 2015/scientific_computing")
 data <- read.csv("gapminderDataFiveYear.txt", sep="\t")
 ```
 
 Now subseting out three coutnries and plotting their GDPs by year
-```{r}
+```{r, echo = F}
 panama <- subset(data,data$country=="Panama")
 japan <- subset(data,data$country=="Japan")
 canada <- subset(data,data$country=="Canada")
@@ -18,7 +21,8 @@ plot(canada$gdpPercap~canada$year, ylab="GDP", xlab="year", pch=19)
 ```
 
 Now calculating the means, min, and max values per continent, and creating a histograms for life expectancy
-```{r}
+```{r, echo = FALSE}
+#echo = F means that the R code won't appear in the final knit document
 means <- tapply(data$lifeExp, data$continent, mean)
 means
 min <- tapply(data$lifeExp, data$continent, min)
@@ -29,9 +33,3 @@ max
 hist(data$lifeExp)
 hist(data$lifeExp, breaks=50)
 ```
-
-
-why did the git stuff suddenly go away???
-
-
-will this make things appear?
