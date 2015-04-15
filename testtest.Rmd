@@ -1,0 +1,31 @@
+THIS WORKS!!! OMG
+
+Setting working directory and loading data
+```{r}
+setwd("/Users/ricksimpson/Documents/Spring 2015/scientific_computing")
+data <- read.csv("gapminderDataFiveYear.txt", sep="\t")
+```
+
+Now subseting out three coutnries and plotting their GDPs by year
+```{r}
+panama <- subset(data,data$country=="Panama")
+japan <- subset(data,data$country=="Japan")
+canada <- subset(data,data$country=="Canada")
+
+plot(panama$gdpPercap~panama$year, ylab="GDP", xlab="year", pch=19)
+plot(japan$gdpPercap~japan$year, ylab="GDP", xlab="year", pch=19)
+plot(canada$gdpPercap~canada$year, ylab="GDP", xlab="year", pch=19)
+```
+
+Now calculating the means, min, and max values per continent, and creating a histograms for life expectancy
+```{r}
+means <- tapply(data$lifeExp, data$continent, mean)
+means
+min <- tapply(data$lifeExp, data$continent, min)
+min
+max <- tapply(data$lifeExp, data$continent, max)
+max
+
+hist(data$lifeExp)
+hist(data$lifeExp, breaks=50)
+```
